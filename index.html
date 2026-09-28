@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#234F86">
 <title>AREETA PRIORIZA 6.5.6</title>
 <style>
 :root{--nav:#2f5e85;--teal:#3fa054;--bg:#f3f6f5;--line:#d7dedb;--danger:#b42318;--muted:#70787b;--gold:#FFD700;--areeta-blue:#2f5e85;--areeta-green:#3fa054;--areeta-gray:#70787b}
@@ -1240,6 +1242,11 @@ window.addEventListener('beforeunload',event=>{
 });
 document.querySelectorAll('.nav button[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));
 fillAreas();normalizeFollowupDates();render();updateBackupStatus();showDailyReminderNotice();
+</script>
+ <script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('./service-worker.js');
+}
 </script>
 </body>
 </html>
